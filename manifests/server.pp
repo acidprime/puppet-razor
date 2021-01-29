@@ -165,7 +165,7 @@ class razor::server inherits razor {
   exec { 'razor-redeploy':
     cwd         => $::razor::data_root_path,
     path        => [
-      '/bin', '/sbin','/opt/puppetlabs/bin',
+      '/bin', '/sbin','/opt/puppetlabs/bin','/opt/puppetlabs/server/apps/razor-server/sbin',
       '/usr/bin', '/usr/sbin',
       '/usr/local/bin', '/usr/local/sbin',
       $::razor::torquebox_binary_path,
