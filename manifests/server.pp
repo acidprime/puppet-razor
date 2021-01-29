@@ -146,7 +146,7 @@ class razor::server inherits razor {
   exec { 'razor-migrate-database':
     cwd         => $::razor::data_root_path,
     path        => [
-      '/bin', '/sbin',
+      '/bin', '/sbin','/opt/puppetlabs/bin',
       '/usr/bin', '/usr/sbin',
       '/usr/local/bin', '/usr/local/sbin',
       $::razor::binary_path, $::razor::jruby_binary_path,
@@ -165,7 +165,7 @@ class razor::server inherits razor {
   exec { 'razor-redeploy':
     cwd         => $::razor::data_root_path,
     path        => [
-      '/bin', '/sbin',
+      '/bin', '/sbin','/opt/puppetlabs/bin',
       '/usr/bin', '/usr/sbin',
       '/usr/local/bin', '/usr/local/sbin',
       $::razor::torquebox_binary_path,
