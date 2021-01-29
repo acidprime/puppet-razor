@@ -44,14 +44,15 @@ class razor::server inherits razor {
         }
         'Debian': {
           case $::lsbdistcodename {
-            'squeeze','wheezy','jessie','stretch': {
+            'squeeze','wheezy','jessie','stretch','buster': {
               # Squeeze (6) - OK
               # Wheezy (7) - OK
               # Jessie (8) - OK
               # Stretch (9) - OK
+              # Buster (10) - OK
             }
             default: {
-              fail("Debian < 6 and > 10 is not supported: ${::lsbdistcodename}")
+              fail("Debian < 6 and > 11 is not supported: ${::lsbdistcodename}")
             }
           }
         }
